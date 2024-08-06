@@ -1,0 +1,43 @@
+* {
+  list-style: none;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  color: black;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  padding: 1vw;
+  padding-right: 0;
+}
+
+.logo {
+  display: flex;
+  gap: 10px;
+  font-size: 4rem;
+  font-weight: bold;
+  border: 1px solid rgb(26, 115, 232);
+  background-color: rgb(26, 115, 232);
+}
+
+.border {
+  border-bottom: 1px solid rgb(26, 115, 232);
+  width: 100%;
+}
+
+.news {
+  color: white;
+  padding: 0 10px;
+}
+
+.app {
+  padding: 0 10px;
+}
+
+.app {
+  color: rgb(26, 115, 232);
+  background-color: white;
+}

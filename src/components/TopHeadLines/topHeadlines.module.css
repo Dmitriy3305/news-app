@@ -8,7 +8,7 @@
 }
 
 .container {
-  padding: 20px;
+  padding: 1vw;
   font-family: merriweather;
   max-width: 40%;
   display: flex;
@@ -32,7 +32,7 @@
 .container-title {
   font-size: 2rem;
   font-family: merriweather;
-  background-color: #405ded;
+  background-color: rgb(26, 115, 232);
   color: white;
   text-transform: uppercase;
 }
