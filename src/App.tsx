@@ -1,11 +1,11 @@
+import TopHeadlines from "./components/TopHeadLines/TopHeadlines";
 import "./App.css";
 
 function App() {
-
   return (
-    <>
-      <div></div>
-    </>
+    <div>
+      <TopHeadlines />
+    </div>
   );
 }
 
