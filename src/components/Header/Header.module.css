@@ -7,7 +7,7 @@
   color: black;
 }
 
-.container {
+.header {
   display: flex;
   width: 100%;
   padding: 1vw;

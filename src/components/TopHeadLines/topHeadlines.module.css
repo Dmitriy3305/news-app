@@ -7,7 +7,7 @@
   color: black;
 }
 
-.container {
+.top-headlines {
   padding: 1vw;
   font-family: merriweather;
   max-width: 40%;
@@ -29,7 +29,7 @@
   font-size: 2rem;
 }
 
-.container-title {
+.title {
   font-size: 2rem;
   font-family: merriweather;
   background-color: rgb(26, 115, 232);

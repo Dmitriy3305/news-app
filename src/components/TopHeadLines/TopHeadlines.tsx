@@ -3,7 +3,7 @@ import ISources from "../../interfaces/sources";
 import React, { useEffect, useState } from "react";
 import IData from "../../interfaces/data";
 import styles from "./topHeadlines.module.css";
-import { getLanguages } from "../../utils/getLanguages";
+import { getCountries } from "../../utils/getCountries";
 
 const TopHeadlines: React.FC = (): JSX.Element => {
   const [headlines, setHeadlines] = useState<ISources[]>([]);
@@ -27,16 +27,16 @@ const TopHeadlines: React.FC = (): JSX.Element => {
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
-  const languages = getLanguages(headlines);
+  const countries = getCountries(headlines);
 
   return (
-    <ul className={styles["container"]}>
-      <h2 className={styles["container-title"]}>TOP HEADLINES</h2>
-      <div className={styles["languages"]}>
-        {languages.map((language: string, index) => (
-          <button className={styles["language"]} key={index}>
+    <section className={styles["top-headlines"]}>
+      <h2 className={styles["title"]}>TOP HEADLINES</h2>
+      <div className={styles["countries"]}>
+        {countries.map((country: string, index) => (
+          <button className={styles["country"]} key={index}>
             {" "}
-            {language}
+            {country}
           </button>
         ))}
       </div>
@@ -53,7 +53,7 @@ const TopHeadlines: React.FC = (): JSX.Element => {
           </a>
         </li>
       ))}
-    </ul>
+    </section>
   );
 };
 

@@ -7,7 +7,6 @@ export async function getTopHeadlines() {
     const response = await fetch(API_URL);
     if (response.ok) {
       const data = await response.json();
-      console.log(data);
       return data;
     } else {
       throw new Error("Error: " + response.status);
