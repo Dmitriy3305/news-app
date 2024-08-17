@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 import NavTop from './NavTop/NavTop';
 import NavBottom from './NavBottom/NavBottom';
 import { MenuType } from '../../types/menuType';
-import { INavProps } from '../../interfaces/INavProps';
 
-const Nav: React.FC<INavProps> = ({ countries, languages }): JSX.Element => {
+const Nav: React.FC = (): JSX.Element => {
   const [activeMenu, setActiveMenu] = useState<MenuType>('COUNTRIES');
 
   const handleMouseEnter = (menu: MenuType) => {
@@ -14,17 +13,12 @@ const Nav: React.FC<INavProps> = ({ countries, languages }): JSX.Element => {
   const handleMouseLeave = () => {
     setActiveMenu('COUNTRIES');
   };
-  console.log(languages);
 
   return (
     <>
       <div onMouseLeave={handleMouseLeave}>
         <NavTop onMenuHover={handleMouseEnter} />
-        <NavBottom
-          activeMenu={activeMenu}
-          countries={countries}
-          languages={languages}
-        />
+        <NavBottom activeMenu={activeMenu} />
       </div>
     </>
   );

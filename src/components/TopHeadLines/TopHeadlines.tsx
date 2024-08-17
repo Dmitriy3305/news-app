@@ -1,14 +1,15 @@
 import ISources from '../../interfaces/ISources';
 import styles from './topHeadlines.module.css';
-import { IHeadlinesProps } from '../../interfaces/IHeadlinesProps';
+import { useAppSelector } from '../../store/store';
+import { selectHeadlines } from '../../store/slices/newsSlice';
 
-const TopHeadlines: React.FC<IHeadlinesProps> = ({
-  headlines,
-}): JSX.Element => {
+const TopHeadlines: React.FC = (): JSX.Element => {
+  const topHeadlines = useAppSelector(selectHeadlines);
+
   return (
     <section className={styles['top-headlines']}>
       <h2 className={styles['title']}>TOP HEADLINES</h2>
-      {headlines.map((sources: ISources, index) => (
+      {topHeadlines.map((sources: ISources, index) => (
         <li className={styles['article']} key={index}>
           <a
             href={sources.url}

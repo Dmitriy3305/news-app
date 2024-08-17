@@ -1,44 +1,28 @@
 import TopHeadlines from './components/TopHeadLines/TopHeadlines';
 import Header from './components/Header/Header';
-import './App.css';
 import Nav from './components/Nav/Nav';
-import { useEffect, useState } from 'react';
-import ISources from './interfaces/ISources';
-import IData from './interfaces/IData';
-import { getTopHeadlines } from './api/getTopHeadlines';
-import { getCountries } from './utils/getCountries';
-import { getLanguages } from './utils/getLanguages';
+import { selectError, selectLoading } from './store/slices/newsSlice';
+import { useEffect } from 'react';
+import { fetchNews } from './api/fetchNews';
+import { useAppDispatch, useAppSelector } from './store/store';
 
 function App() {
-  const [headlines, setHeadlines] = useState<ISources[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const dispatch = useAppDispatch();
+  const loading = useAppSelector(selectLoading);
+  const error = useAppSelector(selectError);
 
   useEffect(() => {
-    const fetchNews = async () => {
-      try {
-        const data: IData = await getTopHeadlines();
-        setHeadlines(data.sources);
-      } catch (error) {
-        setError('An error occurred while fetching data.');
-      } finally {
-        setLoading(false);
-      }
-    };
+    dispatch(fetchNews());
+  }, [dispatch]);
 
-    fetchNews();
-  }, []);
-
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error}</div>;
-  const countries = getCountries(headlines);
-  const languages = getLanguages(headlines);
+  if (loading) return <div>Загрузка...</div>;
+  if (error) return <div>Ошибка: {error}</div>;
 
   return (
     <div>
       <Header />
-      <Nav countries={countries} languages={languages} />
-      <TopHeadlines headlines={headlines} />
+      <Nav />
+      <TopHeadlines />
     </div>
   );
 }
