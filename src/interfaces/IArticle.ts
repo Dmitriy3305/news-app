@@ -1,4 +1,4 @@
-import ISource from "./source";
+import ISource from './ISource';
 
 interface IArticle {
   title: string;

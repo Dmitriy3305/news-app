@@ -1,6 +1,6 @@
-import ISources from '../../interfaces/sources';
+import ISources from '../../interfaces/ISources';
 import styles from './topHeadlines.module.css';
-import { IHeadlinesProps } from '../../interfaces/headlinesProps';
+import { IHeadlinesProps } from '../../interfaces/IHeadlinesProps';
 
 const TopHeadlines: React.FC<IHeadlinesProps> = ({
   headlines,

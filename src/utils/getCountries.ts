@@ -1,4 +1,4 @@
-import ISources from '../interfaces/sources';
+import ISources from '../interfaces/ISources';
 import { countryMap } from '../const/countryMap';
 
 export const getCountries = (sources: Array<ISources>) => {

@@ -1,5 +1,5 @@
-import IArticle from "./article";
-import ISources from "./sources";
+import IArticle from './IArticle';
+import ISources from './ISources';
 
 interface IData {
   articles: Array<IArticle>;

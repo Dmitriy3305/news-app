@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './navBottom.module.css';
-import { INavBottomProps } from '../../../interfaces/navBottomProps';
+import { INavBottomProps } from '../../../interfaces/INavBottomProps';
 import { MenuType } from '../../../types/menuType';
 import { categories } from '../../../const/categories';
 

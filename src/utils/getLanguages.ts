@@ -1,4 +1,4 @@
-import ISources from '../interfaces/sources';
+import ISources from '../interfaces/ISources';
 import { languageMap } from '../const/languageMap';
 
 export const getLanguages = (sources: Array<ISources>) => {

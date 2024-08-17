@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import NavTop from './NavTop/NavTop';
 import NavBottom from './NavBottom/NavBottom';
 import { MenuType } from '../../types/menuType';
-import { INavProps } from '../../interfaces/navProps';
+import { INavProps } from '../../interfaces/INavProps';
 
 const Nav: React.FC<INavProps> = ({ countries, languages }): JSX.Element => {
   const [activeMenu, setActiveMenu] = useState<MenuType>('COUNTRIES');

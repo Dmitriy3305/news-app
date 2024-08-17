@@ -1,4 +1,4 @@
-import ISources from './sources';
+import ISources from './ISources';
 
 export interface IHeadlinesProps {
   headlines: ISources[];
