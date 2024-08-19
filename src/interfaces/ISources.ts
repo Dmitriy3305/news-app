@@ -5,6 +5,7 @@ interface ISources {
   language: string;
   url: string;
   country: string;
+  category: string;
 }
 
 export default ISources;

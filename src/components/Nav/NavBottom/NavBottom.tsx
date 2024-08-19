@@ -2,16 +2,17 @@ import React from 'react';
 import styles from './navBottom.module.css';
 import { INavBottomProps } from '../../../interfaces/INavBottomProps';
 import { MenuType } from '../../../types/menuType';
-import { categories } from '../../../const/categories';
-import { selectHeadlines } from '../../../store/slices/newsSlice';
-import { useAppSelector } from '../../../store/store';
-import { getCountries } from '../../../utils/getCountries';
-import { getLanguages } from '../../../utils/getLanguages';
+import { useAppDispatch, useAppSelector } from '../../../store/store';
+import { handleClickOnNav } from '../../../utils/handleClickOnNav';
+import { selectCountries } from '../../../store/slices/countriesSlice';
+import { selectLanguages } from '../../../store/slices/languagesSlice';
+import { selectCategories } from '../../../store/slices/categoriesSlice';
 
 const NavBottom: React.FC<INavBottomProps> = ({ activeMenu }): JSX.Element => {
-  const topHeadlines = useAppSelector(selectHeadlines);
-  const countries = getCountries(topHeadlines);
-  const languages = getLanguages(topHeadlines);
+  const dispatch = useAppDispatch();
+  const countries = useAppSelector(selectCountries);
+  const languages = useAppSelector(selectLanguages);
+  const categories = useAppSelector(selectCategories);
   const menuItems: Record<Exclude<MenuType, null>, string[]> = {
     COUNTRIES: countries,
     CATEGORIES: categories,
@@ -23,7 +24,11 @@ const NavBottom: React.FC<INavBottomProps> = ({ activeMenu }): JSX.Element => {
       <ul className={styles['menu']}>
         {activeMenu &&
           menuItems[activeMenu]?.map((item: string, index: number) => (
-            <li key={index} className={styles['item']}>
+            <li
+              key={index}
+              className={styles['item']}
+              onClick={() => handleClickOnNav(dispatch, activeMenu, item)}
+            >
               {item}
             </li>
           ))}

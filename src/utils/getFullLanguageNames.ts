@@ -1,7 +1,7 @@
 import ISources from '../interfaces/ISources';
 import { languageMap } from '../const/languageMap';
 
-export const getLanguages = (sources: Array<ISources>) => {
+export const getFullLanguageNames = (sources: Array<ISources>) => {
   const languages = sources.map((source: ISources) => source.language);
 
   const uniqueLanguages = Array.from(new Set(languages));

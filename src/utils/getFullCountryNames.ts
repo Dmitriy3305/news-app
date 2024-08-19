@@ -1,7 +1,7 @@
 import ISources from '../interfaces/ISources';
 import { countryMap } from '../const/countryMap';
 
-export const getCountries = (sources: Array<ISources>) => {
+export const getFullCountryNames = (sources: Array<ISources>) => {
   const countries = sources.map((source: ISources) => source.country);
 
   const uniqueCountries = Array.from(new Set(countries));
