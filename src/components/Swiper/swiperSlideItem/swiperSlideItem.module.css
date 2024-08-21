@@ -1,0 +1,14 @@
+.item {
+    color: rgb(26, 115, 232);
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .swiper-slide {
+    width: 100%;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    color: rgb(26, 115, 232);
+    font-weight: bold;
+  }

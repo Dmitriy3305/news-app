@@ -9,15 +9,9 @@
 
 .menu {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   font-family: merriweather;
   width: 100%;
   font-size: 2rem;
   padding: 0.5vw;
-}
-
-.item {
-  color: rgb(26, 115, 232);
-  font-weight: bold;
 }

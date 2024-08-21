@@ -1,0 +1,7 @@
+.swiper {
+    width: 100%;
+    display: flex;
+    gap: 5vw;
+    justify-content: space-between;
+    align-items: center;
+  }

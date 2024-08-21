@@ -7,6 +7,7 @@ import { handleClickOnNav } from '../../../utils/handleClickOnNav';
 import { selectCountries } from '../../../store/slices/countriesSlice';
 import { selectLanguages } from '../../../store/slices/languagesSlice';
 import { selectCategories } from '../../../store/slices/categoriesSlice';
+import SwiperComponent from '../../Swiper/swiperComponent/swiperComponent';
 
 const NavBottom: React.FC<INavBottomProps> = ({ activeMenu }): JSX.Element => {
   const dispatch = useAppDispatch();
@@ -21,18 +22,14 @@ const NavBottom: React.FC<INavBottomProps> = ({ activeMenu }): JSX.Element => {
 
   return (
     <nav className={styles['nav']}>
-      <ul className={styles['menu']}>
-        {activeMenu &&
-          menuItems[activeMenu]?.map((item: string, index: number) => (
-            <li
-              key={index}
-              className={styles['item']}
-              onClick={() => handleClickOnNav(dispatch, activeMenu, item)}
-            >
-              {item}
-            </li>
-          ))}
-      </ul>
+      {activeMenu && (
+        <SwiperComponent
+          items={menuItems[activeMenu] || []}
+          onItemClick={(item) =>
+            handleClickOnNav(dispatch, activeMenu, item.toString())
+          }
+        />
+      )}
     </nav>
   );
 };

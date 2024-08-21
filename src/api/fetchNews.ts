@@ -25,7 +25,6 @@ export const fetchNews = createAsyncThunk(
     if (item && activeMenu) {
       if (activeMenu == 'country') {
         const data = await getNewsOfCountry(item!);
-        console.log(data);
         return data.sources;
       }
       if (activeMenu == 'language') {
