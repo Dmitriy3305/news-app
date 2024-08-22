@@ -26,11 +26,11 @@
 
 .language {
   width: 5%;
-  font-size: 2rem;
+  font-size: 1rem;
 }
 
 .title {
-  font-size: 2rem;
+  font-size: 1rem;
   font-family: merriweather;
   background-color: rgb(26, 115, 232);
   color: white;
@@ -41,6 +41,7 @@
   text-align: left;
   font-family: merriweather;
   text-transform: uppercase;
+  font-weight: bold;
 }
 
 .article {
@@ -50,7 +51,7 @@
   padding-top: 1vw;
   position: relative;
   border-bottom: 0.5px solid #405ded;
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 .article:hover {

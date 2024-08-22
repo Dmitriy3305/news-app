@@ -1,3 +1,4 @@
+import ISources from '../../interfaces/ISources';
 import styles from './topHeadlines.module.css';
 import { useAppDispatch, useAppSelector } from '../../store/store';
 import {
@@ -7,8 +8,6 @@ import {
 } from '../../store/slices/newsSlice';
 import { useEffect } from 'react';
 import { fetchNews } from '../../api/fetchNews';
-import SwiperComponent from '../Swiper/swiperComponent/swiperComponent';
-import ISources from '../../interfaces/ISources';
 
 const TopHeadlines: React.FC = (): JSX.Element => {
   const dispatch = useAppDispatch();
@@ -27,10 +26,21 @@ const TopHeadlines: React.FC = (): JSX.Element => {
     <section className={styles['top-headlines']}>
       <h2 className={styles['title']}>TOP HEADLINES</h2>
       {topHeadlines.length > 0 ? (
-        <SwiperComponent
-          items={topHeadlines}
-          onItemClick={(item) => window.open((item as ISources).url, '_blank')}
-        />
+        <ul>
+          {topHeadlines.slice(0, 5).map((sources: ISources, index) => (
+            <li className={styles['article']} key={index}>
+              <a
+                href={sources.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles['article-link']}
+              >
+                <p className={styles['description']}>{sources.description}</p>
+                <p className={styles['name']}>{sources.name}</p>
+              </a>
+            </li>
+          ))}
+        </ul>
       ) : (
         <p>No headlines available</p>
       )}

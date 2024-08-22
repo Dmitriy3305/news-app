@@ -14,8 +14,24 @@ const SwiperComponent: React.FC<ISwiperComponentProps> = ({
     <Swiper
       className={styles.swiper}
       modules={[Navigation]}
-      slidesPerView={3}
       navigation
+      breakpoints={{
+        320: {
+          slidesPerView: 1,
+        },
+        640: {
+          slidesPerView: 2,
+        },
+        768: {
+          slidesPerView: 3,
+        },
+        1024: {
+          slidesPerView: 4,
+        },
+        1440: {
+          slidesPerView: 5,
+        },
+      }}
     >
       {items.map((item, index) => (
         <SwiperSlide key={index}>

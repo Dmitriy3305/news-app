@@ -1,14 +1,21 @@
 .item {
-    color: rgb(26, 115, 232);
-    font-weight: bold;
-    text-align: center;
-  }
-  
-  .swiper-slide {
-    width: 100%;
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    color: rgb(26, 115, 232);
-    font-weight: bold;
-  }
+  color: rgb(26, 115, 232);
+  font-weight: bold;
+  text-align: center;
+}
+
+.swiper-slide {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(26, 115, 232);
+  font-weight: bold;
+}
+
+.swiper-slide:hover {
+  background-color: rgba(64, 93, 237, 0.1);
+  opacity: 0.99;
+  transition: 0.5s;
+  cursor: pointer;
+}
