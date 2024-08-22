@@ -21,3 +21,7 @@
   color: rgb(26, 115, 232);
   font-weight: bold;
 }
+
+.active {
+  color: #ff6347;
+}

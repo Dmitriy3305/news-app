@@ -17,7 +17,7 @@ const Nav: React.FC = (): JSX.Element => {
   return (
     <>
       <div onMouseLeave={handleMouseLeave}>
-        <NavTop onMenuHover={handleMouseEnter} />
+        <NavTop onMenuHover={handleMouseEnter} activeMenu={activeMenu} />
         <NavBottom activeMenu={activeMenu} />
       </div>
     </>

@@ -5,7 +5,6 @@
 }
 
 .swiper-slide {
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,8 +12,8 @@
   font-weight: bold;
 }
 
-.swiper-slide:hover {
-  background-color: rgba(64, 93, 237, 0.1);
+.item:hover {
+  color: #ff6347;
   opacity: 0.99;
   transition: 0.5s;
   cursor: pointer;
