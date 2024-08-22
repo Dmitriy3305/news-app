@@ -17,31 +17,12 @@
   color: black;
 }
 
-.languages {
-  display: flex;
-  justify-content: space-between;
-  max-width: 100%;
-  padding: 1vw;
-}
-
-.language {
-  width: 5%;
-  font-size: 1rem;
-}
-
 .title {
   font-size: 1rem;
   font-family: merriweather;
   background-color: rgb(26, 115, 232);
   color: white;
   text-transform: uppercase;
-}
-
-.description {
-  text-align: left;
-  font-family: merriweather;
-  text-transform: uppercase;
-  font-weight: bold;
 }
 
 .article {
@@ -52,6 +33,37 @@
   position: relative;
   border-bottom: 0.5px solid #405ded;
   font-size: 1rem;
+  transition: transform 0.5s ease;
+}
+
+.slide-in {
+  animation: slideIn 0.5s forwards;
+}
+
+.slide-out {
+  animation: slideOut 0.5s forwards;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(25%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-25%);
+    opacity: 0;
+  }
 }
 
 .article:hover {
