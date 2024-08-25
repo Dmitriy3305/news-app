@@ -17,14 +17,6 @@
   color: black;
 }
 
-.title {
-  font-size: 1rem;
-  font-family: merriweather;
-  background-color: rgb(26, 115, 232);
-  color: white;
-  text-transform: uppercase;
-}
-
 .slide-out {
   animation: slideOut 0.5s forwards;
 }

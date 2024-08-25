@@ -9,6 +9,7 @@ import {
 import { useEffect, useState } from 'react';
 import { fetchNews } from '../../api/fetchNews';
 import Article from '../Article/Article';
+import Title from '../Title/Title';
 
 const TopHeadlines: React.FC = (): JSX.Element => {
   const dispatch = useAppDispatch();
@@ -30,7 +31,7 @@ const TopHeadlines: React.FC = (): JSX.Element => {
 
   return (
     <section className={styles['top-headlines']}>
-      <h2 className={styles['title']}>TOP HEADLINES</h2>
+      <Title title={'TOP HEADLINES'} />
       {topHeadlines.length > 0 ? (
         <ul>
           {topHeadlines.map((sources: ISources, index) => (
