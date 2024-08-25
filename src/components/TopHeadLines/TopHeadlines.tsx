@@ -8,13 +8,13 @@ import {
 } from '../../store/slices/newsSlice';
 import { useEffect, useState } from 'react';
 import { fetchNews } from '../../api/fetchNews';
-import NewsLink from '../newsLink/NewsLink';
+import Article from '../Article/Article';
 
 const TopHeadlines: React.FC = (): JSX.Element => {
   const dispatch = useAppDispatch();
   const loading = useAppSelector(selectLoading);
   const error = useAppSelector(selectError);
-  const topHeadlines = useAppSelector(selectHeadlines);
+  const topHeadlines = useAppSelector(selectHeadlines).slice(0, 5);
   const [previousHeadlines, setPreviousHeadlines] = useState<ISources[]>([]);
 
   useEffect(() => {
@@ -22,7 +22,7 @@ const TopHeadlines: React.FC = (): JSX.Element => {
   }, [dispatch]);
 
   useEffect(() => {
-    setPreviousHeadlines(topHeadlines.slice(0, 5));
+    setPreviousHeadlines(topHeadlines);
   }, [topHeadlines]);
 
   if (loading) return <div></div>;
@@ -33,22 +33,12 @@ const TopHeadlines: React.FC = (): JSX.Element => {
       <h2 className={styles['title']}>TOP HEADLINES</h2>
       {topHeadlines.length > 0 ? (
         <ul>
-          {topHeadlines.slice(0, 5).map((sources: ISources, index) => (
-            <li
-              className={`${styles['article']} ${styles['slide-in']}`}
-              key={index}
-            >
-              <NewsLink sources={sources} />
-            </li>
+          {topHeadlines.map((sources: ISources, index) => (
+            <Article sources={sources} index={index} />
           ))}
           {previousHeadlines.length > 0 &&
             previousHeadlines.map((sources: ISources, index) => (
-              <li
-                className={`${styles['article']} ${styles['slide-out']}`}
-                key={index + 10}
-              >
-                <NewsLink sources={sources} />
-              </li>
+              <Article sources={sources} index={index} />
             ))}
         </ul>
       ) : (

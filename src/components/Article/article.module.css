@@ -1,0 +1,31 @@
+.article {
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+  padding-top: 1vw;
+  position: relative;
+  border-bottom: 0.5px solid #405ded;
+  font-size: 1rem;
+  transition: transform 0.5s ease;
+}
+
+.article:hover {
+  background-color: rgba(64, 93, 237, 0.1);
+  opacity: 0.99;
+  transition: 0.5s;
+}
+
+.slide-in {
+  animation: slideIn 0.5s forwards;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(25%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
