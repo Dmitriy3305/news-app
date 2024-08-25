@@ -36,6 +36,13 @@
   transition: transform 0.5s ease;
 }
 
+.article:hover {
+  background-color: rgba(64, 93, 237, 0.1);
+  opacity: 0.99;
+  transition: 0.5s;
+}
+
+
 .slide-in {
   animation: slideIn 0.5s forwards;
 }
@@ -64,10 +71,4 @@
     transform: translateX(-25%);
     opacity: 0;
   }
-}
-
-.article:hover {
-  background-color: rgba(64, 93, 237, 0.1);
-  opacity: 0.99;
-  transition: 0.5s;
 }

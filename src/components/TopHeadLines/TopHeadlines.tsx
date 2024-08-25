@@ -8,6 +8,7 @@ import {
 } from '../../store/slices/newsSlice';
 import { useEffect, useState } from 'react';
 import { fetchNews } from '../../api/fetchNews';
+import NewsLink from '../newsLink/NewsLink';
 
 const TopHeadlines: React.FC = (): JSX.Element => {
   const dispatch = useAppDispatch();
@@ -37,15 +38,7 @@ const TopHeadlines: React.FC = (): JSX.Element => {
               className={`${styles['article']} ${styles['slide-in']}`}
               key={index}
             >
-              <a
-                href={sources.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles['article-link']}
-              >
-                <p className={styles['description']}>{sources.description}</p>
-                <p className={styles['name']}>{sources.name}</p>
-              </a>
+              <NewsLink sources={sources} />
             </li>
           ))}
           {previousHeadlines.length > 0 &&
@@ -54,15 +47,7 @@ const TopHeadlines: React.FC = (): JSX.Element => {
                 className={`${styles['article']} ${styles['slide-out']}`}
                 key={index + 10}
               >
-                <a
-                  href={sources.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles['article-link']}
-                >
-                  <p className={styles['description']}>{sources.description}</p>
-                  <p className={styles['name']}>{sources.name}</p>
-                </a>
+                <NewsLink sources={sources} />
               </li>
             ))}
         </ul>
