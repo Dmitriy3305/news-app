@@ -28,7 +28,7 @@ const Pagination: React.FC<PaginationProps> = ({
         onClick={handlePrevPage}
         disabled={currentPage === 1}
       >
-        <GoArrowLeft />
+        <GoArrowLeft className={styles['arrow']} />
       </button>
       <span className={styles['pages']}>
         {currentPage} of {totalPages}
@@ -38,7 +38,7 @@ const Pagination: React.FC<PaginationProps> = ({
         onClick={handleNextPage}
         disabled={currentPage === totalPages}
       >
-        <GoArrowRight />
+        <GoArrowRight className={styles['arrow']} />
       </button>
     </div>
   );

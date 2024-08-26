@@ -20,7 +20,7 @@
   cursor: pointer;
 }
 
-svg {
+.arrow {
   fill: white;
   font-weight: bold;
   font-family: merriweather;
