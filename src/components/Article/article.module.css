@@ -1,12 +1,14 @@
 .article {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 1vw;
   padding-top: 1vw;
   position: relative;
   border-bottom: 0.5px solid #405ded;
   font-size: 1rem;
   transition: transform 0.5s ease;
+  min-height: 100px;
 }
 
 .article:hover {
