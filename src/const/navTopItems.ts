@@ -1,1 +1,1 @@
-export const navTopItems = ["COUNTRIES", "CATEGORIES", "LANGUAGES"];
+export const navTopItems = ['COUNTRIES', 'CATEGORIES', 'LANGUAGES'];

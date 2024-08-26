@@ -21,6 +21,7 @@
   animation: slideOut 0.5s forwards;
 }
 
+
 @keyframes slideOut {
   from {
     transform: translateX(0);

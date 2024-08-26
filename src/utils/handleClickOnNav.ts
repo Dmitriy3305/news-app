@@ -1,5 +1,6 @@
 import { fetchNews } from '../api/fetchNews';
 import { setActiveMenu } from '../store/slices/activeMenuSlice';
+import { setCurrentPage } from '../store/slices/newsSlice';
 import { setSelectedItem } from '../store/slices/selectedtemSlice';
 import { AppDispatch } from '../store/store';
 import { MenuType } from '../types/menuType';
@@ -11,6 +12,7 @@ export const handleClickOnNav = (
   activeMenu: MenuType,
   item: string
 ) => {
+  dispatch(setCurrentPage(1));
   switch (activeMenu) {
     case 'COUNTRIES':
       dispatch(setActiveMenu('country'));
