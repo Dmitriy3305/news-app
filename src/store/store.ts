@@ -6,6 +6,7 @@ import selectedtemReducer from './slices/selectedtemSlice';
 import countriesReducer from './slices/countriesSlice';
 import laguagesReducer from './slices/languagesSlice';
 import categoriesReducer from './slices/categoriesSlice';
+import inputValueReducer from './slices/inputValue';
 
 const store = configureStore({
   reducer: {
@@ -15,6 +16,7 @@ const store = configureStore({
     countries: countriesReducer,
     languages: laguagesReducer,
     categories: categoriesReducer,
+    inputValue: inputValueReducer,
   },
 });
 

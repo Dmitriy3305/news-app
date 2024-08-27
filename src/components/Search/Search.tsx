@@ -1,11 +1,25 @@
 import React from 'react';
 import styles from './search.module.css';
 import IconSearch from '../IconSearch/IconSearch';
+import { useAppDispatch, useAppSelector } from '../../store/store';
+import { selectInputValue, setInputValue } from '../../store/slices/inputValue';
 
 const Search: React.FC = (): JSX.Element => {
+  const dispatch = useAppDispatch();
+  const inputValue = useAppSelector(selectInputValue);
+
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    dispatch(setInputValue(event.target.value));
+  };
+
   return (
     <>
-      <input className={styles['search']} type="text" />
+      <input
+        className={styles['search']}
+        type="text"
+        value={inputValue}
+        onChange={handleInputChange}
+      />
       <IconSearch />
     </>
   );
