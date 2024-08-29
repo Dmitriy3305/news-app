@@ -6,9 +6,9 @@ import {
   selectHeadlines,
   selectLoading,
   selectCurrentPage,
-} from '../../store/slices/newsSlice';
+} from '../../store/slices/topNewsSlice';
 import { useEffect } from 'react';
-import { fetchNews } from '../../api/fetchNews';
+import { fetchTopNews } from '../../api/fetchTopNews';
 import Article from '../Article/Article';
 import Title from '../Title/Title';
 
@@ -21,7 +21,9 @@ const TopHeadlines: React.FC = (): JSX.Element => {
   const ITEMS_PER_PAGE = 5;
 
   useEffect(() => {
-    dispatch(fetchNews({ dispatch: dispatch, activeMenu: null, item: null }));
+    dispatch(
+      fetchTopNews({ dispatch: dispatch, activeMenu: null, item: null })
+    );
   }, [dispatch]);
 
   if (loading) return <div></div>;

@@ -1,15 +1,26 @@
-import React from "react";
-import styles from "./iconSearch.module.css";
+import React from 'react';
+import styles from './iconSearch.module.css';
+import { selectInputValue } from '../../store/slices/inputValue';
+import { useAppDispatch, useAppSelector } from '../../store/store';
+import { fetchNewsFromSearh } from '../../api/fetchNewsFromSearch';
 
 const IconSearch: React.FC = (): JSX.Element => {
+  const dispatch = useAppDispatch();
+  const inputValue = useAppSelector(selectInputValue);
+
+  const handleClickIconSearch = () => {
+    dispatch(fetchNewsFromSearh({ dispatch, inputValue }));
+  };
+
   return (
     <svg
-      className={styles["icon"]}
+      className={styles['icon']}
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
       viewBox="0 0 24 24"
       fill="none"
+      onClick={handleClickIconSearch}
     >
       <path
         fillRule="evenodd"

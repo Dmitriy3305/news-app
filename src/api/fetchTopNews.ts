@@ -11,7 +11,7 @@ import { getNewsOfCategory } from './getNewsOfCategory';
 import { setCategories } from '../store/slices/categoriesSlice';
 import { getCategories } from '../utils/getCategories';
 
-export const fetchNews = createAsyncThunk(
+export const fetchTopNews = createAsyncThunk(
   'news/fetchNews',
   async ({
     dispatch,

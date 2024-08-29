@@ -1,6 +1,6 @@
-import { fetchNews } from '../api/fetchNews';
+import { fetchTopNews } from '../api/fetchTopNews';
 import { setActiveMenu } from '../store/slices/activeMenuSlice';
-import { setCurrentPage } from '../store/slices/newsSlice';
+import { setCurrentPage } from '../store/slices/topNewsSlice';
 import { setSelectedItem } from '../store/slices/selectedtemSlice';
 import { AppDispatch } from '../store/store';
 import { MenuType } from '../types/menuType';
@@ -18,7 +18,7 @@ export const handleClickOnNav = (
       dispatch(setActiveMenu('country'));
       dispatch(setSelectedItem(getShotCountryNames(item)));
       dispatch(
-        fetchNews({
+        fetchTopNews({
           dispatch: null,
           activeMenu: 'country',
           item: getShotCountryNames(item),
@@ -29,7 +29,7 @@ export const handleClickOnNav = (
       dispatch(setActiveMenu('category'));
       dispatch(setSelectedItem(item.toLowerCase()));
       dispatch(
-        fetchNews({
+        fetchTopNews({
           dispatch: null,
           activeMenu: 'category',
           item: item.toLowerCase(),
@@ -40,7 +40,7 @@ export const handleClickOnNav = (
       dispatch(setActiveMenu('language'));
       dispatch(setSelectedItem(getShotLanguageNames(item)));
       dispatch(
-        fetchNews({
+        fetchTopNews({
           dispatch: null,
           activeMenu: 'language',
           item: getShotLanguageNames(item),

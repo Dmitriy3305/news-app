@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './title.module.css';
 import Pagination from '../Pagination/Pagination';
 import { useAppDispatch } from '../../store/store';
-import { setCurrentPage } from '../../store/slices/newsSlice';
+import { setCurrentPage } from '../../store/slices/topNewsSlice';
 
 interface TitleProps {
   title: string;

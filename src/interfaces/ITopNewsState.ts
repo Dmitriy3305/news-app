@@ -1,6 +1,6 @@
 import ISources from './ISources';
 
-export interface INewsState {
+export interface ITopNewsState {
   headlines: ISources[];
   loading: boolean;
   error: string;

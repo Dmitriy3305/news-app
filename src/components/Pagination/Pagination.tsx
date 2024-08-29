@@ -1,5 +1,5 @@
 import { PaginationProps } from '../../interfaces/IPaginationProps';
-import { selectCurrentPage } from '../../store/slices/newsSlice';
+import { selectCurrentPage } from '../../store/slices/topNewsSlice';
 import { useAppSelector } from '../../store/store';
 import styles from './pagination.module.css';
 import { GoArrowRight } from 'react-icons/go';
