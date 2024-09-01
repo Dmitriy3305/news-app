@@ -12,8 +12,8 @@ export const fetchNewsFromSearh = createAsyncThunk(
     inputValue: string | null;
   }) => {
     if (dispatch && inputValue) {
-      const data = getNewsFromSearch(inputValue);
-      return data;
+      const data = await getNewsFromSearch(inputValue);
+      return data.articles;
     }
   }
 );

@@ -10,7 +10,7 @@
 .top-headlines {
   padding: 1vw;
   font-family: merriweather;
-  max-width: 40%;
+  width: 45%;
   display: flex;
   flex-direction: column;
   font-size: 1em;
