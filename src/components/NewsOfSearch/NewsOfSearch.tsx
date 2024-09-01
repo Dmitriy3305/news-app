@@ -9,6 +9,7 @@ import Article from '../Article/Article';
 import Title from '../Title/Title';
 import { selectArticless } from '../../store/slices/newsOfSearchSlice';
 import IArticle from '../../interfaces/IArticle';
+import Loader from '../Loader/Loader';
 
 const NewsOfSearch: React.FC = (): JSX.Element => {
   const loading = useAppSelector(selectLoading);
@@ -17,7 +18,7 @@ const NewsOfSearch: React.FC = (): JSX.Element => {
   const currentPage = useAppSelector(selectCurrentPage);
   const ITEMS_PER_PAGE = 5;
 
-  if (loading) return <div></div>;
+  if (loading) return <Loader />;
   if (error) return <div>Error: {error}</div>;
 
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;

@@ -11,6 +11,7 @@ import { useEffect } from 'react';
 import { fetchTopNews } from '../../api/fetchTopNews';
 import Article from '../Article/Article';
 import Title from '../Title/Title';
+import Loader from '../Loader/Loader';
 
 const TopHeadlines: React.FC = (): JSX.Element => {
   const dispatch = useAppDispatch();
@@ -26,7 +27,7 @@ const TopHeadlines: React.FC = (): JSX.Element => {
     );
   }, [dispatch]);
 
-  if (loading) return <div></div>;
+  if (loading) return <Loader />;
   if (error) return <div>Error: {error}</div>;
 
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
