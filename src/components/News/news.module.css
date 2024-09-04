@@ -1,5 +1,5 @@
 .news-container {
-    justify-content: space-around;
-    display: flex;
-    align-items: start;
-  }
+  justify-content: space-around;
+  display: flex;
+  align-items: start;
+}
