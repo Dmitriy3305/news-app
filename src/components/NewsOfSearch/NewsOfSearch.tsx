@@ -3,7 +3,7 @@ import { useAppSelector } from '../../store/store';
 import {
   selectError,
   selectLoading,
-  selectCurrentPage,
+  selectCurrentPageNewsOfSearch,
 } from '../../store/slices/newsOfSearchSlice';
 import Article from '../Article/Article';
 import Title from '../Title/Title';
@@ -15,7 +15,7 @@ const NewsOfSearch: React.FC = (): JSX.Element => {
   const loading = useAppSelector(selectLoading);
   const error = useAppSelector(selectError);
   const newsOfSearch = useAppSelector(selectArticless) as IArticle[];
-  const currentPage = useAppSelector(selectCurrentPage);
+  const currentPage = useAppSelector(selectCurrentPageNewsOfSearch);
   const ITEMS_PER_PAGE = 5;
 
   if (loading) return <Loader />;

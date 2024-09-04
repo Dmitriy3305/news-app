@@ -1,24 +1,30 @@
 import { PaginationProps } from '../../interfaces/IPaginationProps';
-import { selectCurrentPage } from '../../store/slices/topNewsSlice';
+import { selectCurrentPageTopNews } from '../../store/slices/topNewsSlice';
+import { selectCurrentPageNewsOfSearch } from '../../store/slices/newsOfSearchSlice';
 import { useAppSelector } from '../../store/store';
 import styles from './pagination.module.css';
 import { GoArrowRight } from 'react-icons/go';
 import { GoArrowLeft } from 'react-icons/go';
 
 const Pagination: React.FC<PaginationProps> = ({
+  title,
   setCurrentPage,
   totalItems,
   itemsPerPage,
 }) => {
   const totalPages = Math.ceil(totalItems / itemsPerPage);
-  const currentPage = useAppSelector(selectCurrentPage);
+  const currentPageTopNews = useAppSelector(selectCurrentPageTopNews);
+  const currentPageNewsOfSearch = useAppSelector(selectCurrentPageNewsOfSearch);
+
+  const currentPage =
+    title === 'TOP HEADLINES' ? currentPageTopNews : currentPageNewsOfSearch;
 
   const handleNextPage = () => {
-    setCurrentPage(Math.min(currentPage + 1, totalPages));
+    setCurrentPage(title, Math.min(currentPage + 1, totalPages));
   };
 
   const handlePrevPage = () => {
-    setCurrentPage(Math.max(currentPage - 1, 1));
+    setCurrentPage(title, Math.max(currentPage - 1, 1));
   };
 
   return (

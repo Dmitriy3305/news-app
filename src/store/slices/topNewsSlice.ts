@@ -15,7 +15,7 @@ const topNewsSlice = createSlice({
   name: 'topNews',
   initialState,
   reducers: {
-    setCurrentPage(state, action: PayloadAction<number>) {
+    setCurrentPageTopNews(state, action: PayloadAction<number>) {
       state.currentPage = action.payload;
     },
   },
@@ -36,12 +36,12 @@ const topNewsSlice = createSlice({
   },
 });
 
-export const { setCurrentPage } = topNewsSlice.actions;
+export const { setCurrentPageTopNews } = topNewsSlice.actions;
 
 export const selectHeadlines = (state: RootState) => state.topNews.headlines;
 export const selectLoading = (state: RootState) => state.topNews.loading;
 export const selectError = (state: RootState) => state.topNews.error;
-export const selectCurrentPage = (state: RootState) =>
+export const selectCurrentPageTopNews = (state: RootState) =>
   state.topNews.currentPage;
 export const selectTotalPages = (state: RootState) => state.topNews.totalPages;
 

@@ -1,5 +1,6 @@
 export interface PaginationProps {
-  setCurrentPage: (page: number) => void;
+  title: string;
+  setCurrentPage: (title: string, page: number) => void;
   totalItems: number;
   itemsPerPage: number;
 }

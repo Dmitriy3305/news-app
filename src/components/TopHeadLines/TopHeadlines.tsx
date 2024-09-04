@@ -5,7 +5,7 @@ import {
   selectError,
   selectHeadlines,
   selectLoading,
-  selectCurrentPage,
+  selectCurrentPageTopNews,
 } from '../../store/slices/topNewsSlice';
 import { useEffect } from 'react';
 import { fetchTopNews } from '../../api/fetchTopNews';
@@ -18,7 +18,7 @@ const TopHeadlines: React.FC = (): JSX.Element => {
   const loading = useAppSelector(selectLoading);
   const error = useAppSelector(selectError);
   const topHeadlines = useAppSelector(selectHeadlines);
-  const currentPage = useAppSelector(selectCurrentPage);
+  const currentPage = useAppSelector(selectCurrentPageTopNews);
   const ITEMS_PER_PAGE = 5;
 
   useEffect(() => {

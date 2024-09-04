@@ -15,7 +15,7 @@ const newsOfSearchSlice = createSlice({
   name: 'newsOfSearch',
   initialState,
   reducers: {
-    setCurrentPage(state, action: PayloadAction<number>) {
+    setCurrentPageNewsOfSearch(state, action: PayloadAction<number>) {
       state.currentPage = action.payload;
     },
   },
@@ -36,13 +36,13 @@ const newsOfSearchSlice = createSlice({
   },
 });
 
-export const { setCurrentPage } = newsOfSearchSlice.actions;
+export const { setCurrentPageNewsOfSearch } = newsOfSearchSlice.actions;
 
 export const selectArticless = (state: RootState) =>
   state.newsOfSearch.articles;
 export const selectLoading = (state: RootState) => state.newsOfSearch.loading;
 export const selectError = (state: RootState) => state.newsOfSearch.error;
-export const selectCurrentPage = (state: RootState) =>
+export const selectCurrentPageNewsOfSearch = (state: RootState) =>
   state.newsOfSearch.currentPage;
 export const selectTotalPages = (state: RootState) =>
   state.newsOfSearch.totalPages;
