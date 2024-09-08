@@ -1,21 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './search.module.css';
 import IconSearch from '../IconSearch/IconSearch';
 import { useAppDispatch, useAppSelector } from '../../store/store';
 import { selectInputValue, setInputValue } from '../../store/slices/inputValue';
-import InfoIcon from '../Info/InfoIcon';
+import InfoIcon from '../InfoIcon/InfoIcon';
+import Popup from '../Popup/Popup';
 
 const Search: React.FC = (): JSX.Element => {
   const dispatch = useAppDispatch();
   const inputValue = useAppSelector(selectInputValue);
+  const [isPopupVisible, setIsPopupVisible] = useState(false);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     dispatch(setInputValue(event.target.value));
   };
 
+  const handleInfoClick = () => {
+    setIsPopupVisible(!isPopupVisible);
+  };
+
   return (
     <>
-      <InfoIcon />
+      <InfoIcon handleInfoClick={handleInfoClick} />
       <input
         className={styles['search']}
         type="text"
@@ -23,6 +29,7 @@ const Search: React.FC = (): JSX.Element => {
         onChange={handleInputChange}
       />
       <IconSearch />
+      {isPopupVisible && <Popup handleInfoClick={handleInfoClick} />}
     </>
   );
 };
