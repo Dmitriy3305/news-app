@@ -19,7 +19,7 @@ const NewsLink: React.FC<{ sources: ISources | IArticle }> = ({
         className={styles['article-link']}
       >
         <p className={styles['description']}>{sources.description}</p>
-        <p className={styles['name']}>{sources.author}</p>
+        <p className={styles['name']}>{sources.source.name}</p>
       </a>
     );
   } else {

@@ -44,7 +44,7 @@ const TopHeadlines: React.FC = (): JSX.Element => {
       {topHeadlines.length > 0 ? (
         <ul>
           {currentArticles.map((sources: ISources, index) => (
-            <Article key={index} sources={sources} index={index} />
+            <Article key={sources.id} sources={sources} index={index} />
           ))}
         </ul>
       ) : (
