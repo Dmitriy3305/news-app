@@ -1,10 +1,10 @@
 import React from 'react';
-import styles from './iconSearch.module.css';
+import styles from './searchIcon.module.css';
 import { selectInputValue } from '../../store/slices/inputValue';
 import { useAppDispatch, useAppSelector } from '../../store/store';
 import { fetchNewsFromSearh } from '../../api/fetchNewsFromSearch';
 
-const IconSearch: React.FC = (): JSX.Element => {
+const SearchIcon: React.FC = (): JSX.Element => {
   const dispatch = useAppDispatch();
   const inputValue = useAppSelector(selectInputValue);
 
@@ -14,7 +14,7 @@ const IconSearch: React.FC = (): JSX.Element => {
 
   return (
     <svg
-      className={styles['icon']}
+      className={styles['search-icon']}
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
@@ -32,4 +32,4 @@ const IconSearch: React.FC = (): JSX.Element => {
   );
 };
 
-export default IconSearch;
+export default SearchIcon;

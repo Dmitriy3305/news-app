@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import styles from './search.module.css';
-import IconSearch from '../IconSearch/IconSearch';
 import { useAppDispatch, useAppSelector } from '../../store/store';
 import { selectInputValue, setInputValue } from '../../store/slices/inputValue';
 import InfoIcon from '../InfoIcon/InfoIcon';
 import Popup from '../Popup/Popup';
+import SearchIcon from '../SearchIcon/SearchIcon';
 
 const Search: React.FC = (): JSX.Element => {
   const dispatch = useAppDispatch();
@@ -28,7 +28,7 @@ const Search: React.FC = (): JSX.Element => {
         value={inputValue}
         onChange={handleInputChange}
       />
-      <IconSearch />
+      <SearchIcon />
       {isPopupVisible && <Popup handleInfoClick={handleInfoClick} />}
     </>
   );
