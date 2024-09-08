@@ -9,7 +9,9 @@ const SearchIcon: React.FC = (): JSX.Element => {
   const inputValue = useAppSelector(selectInputValue);
 
   const handleClickIconSearch = () => {
-    dispatch(fetchNewsFromSearh({ dispatch, inputValue }));
+    if (inputValue.trim() !== '') {
+      dispatch(fetchNewsFromSearh({ dispatch, inputValue }));
+    }
   };
 
   return (
