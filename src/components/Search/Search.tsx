@@ -3,6 +3,7 @@ import styles from './search.module.css';
 import IconSearch from '../IconSearch/IconSearch';
 import { useAppDispatch, useAppSelector } from '../../store/store';
 import { selectInputValue, setInputValue } from '../../store/slices/inputValue';
+import InfoIcon from '../Info/InfoIcon';
 
 const Search: React.FC = (): JSX.Element => {
   const dispatch = useAppDispatch();
@@ -14,6 +15,7 @@ const Search: React.FC = (): JSX.Element => {
 
   return (
     <>
+      <InfoIcon />
       <input
         className={styles['search']}
         type="text"
