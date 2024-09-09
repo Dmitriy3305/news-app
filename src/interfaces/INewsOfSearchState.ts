@@ -6,4 +6,5 @@ export interface INewsOfSearchState {
   error: string;
   currentPage: number;
   totalPages: number;
+  isAscendingSort: boolean;
 }

@@ -1,0 +1,8 @@
+.sort-icon {
+  display: flex;
+  cursor: pointer;
+}
+
+.sort-text {
+  color: white;
+}

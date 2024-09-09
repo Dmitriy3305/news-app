@@ -5,6 +5,7 @@ import { useAppDispatch } from '../../store/store';
 import { setCurrentPageTopNews } from '../../store/slices/topNewsSlice';
 import { setCurrentPageNewsOfSearch } from '../../store/slices/newsOfSearchSlice';
 import { ITitleProps } from '../../interfaces/ITitleProps';
+import SortIcon from '../SortIcon/SortIcon';
 
 const Title: React.FC<ITitleProps> = ({
   title,
@@ -21,6 +22,7 @@ const Title: React.FC<ITitleProps> = ({
   return (
     <h2 className={styles['title']}>
       {title}
+      {title != 'TOP HEADLINES' && <SortIcon />}
       <Pagination
         title={title}
         setCurrentPage={handlePageChange}

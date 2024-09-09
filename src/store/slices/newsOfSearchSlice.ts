@@ -9,6 +9,7 @@ const initialState: INewsOfSearchState = {
   error: '',
   currentPage: 1,
   totalPages: 1,
+  isAscendingSort: true,
 };
 
 const newsOfSearchSlice = createSlice({
@@ -17,6 +18,19 @@ const newsOfSearchSlice = createSlice({
   reducers: {
     setCurrentPageNewsOfSearch(state, action: PayloadAction<number>) {
       state.currentPage = action.payload;
+    },
+    sortArticles(state) {
+      state.isAscendingSort = !state.isAscendingSort;
+      state.articles.sort((a, b) => {
+        const dateA = new Date(a.publishedAt).getTime();
+        const dateB = new Date(b.publishedAt).getTime();
+
+        if (state.isAscendingSort) {
+          return dateA - dateB;
+        } else {
+          return dateB - dateA;
+        }
+      });
     },
   },
   extraReducers: (builder) => {
@@ -36,7 +50,8 @@ const newsOfSearchSlice = createSlice({
   },
 });
 
-export const { setCurrentPageNewsOfSearch } = newsOfSearchSlice.actions;
+export const { setCurrentPageNewsOfSearch, sortArticles } =
+  newsOfSearchSlice.actions;
 
 export const selectArticless = (state: RootState) =>
   state.newsOfSearch.articles;
