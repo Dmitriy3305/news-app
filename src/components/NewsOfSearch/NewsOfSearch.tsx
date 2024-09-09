@@ -35,7 +35,7 @@ const NewsOfSearch: React.FC = (): JSX.Element => {
       {newsOfSearch.length > 0 ? (
         <ul>
           {currentArticles.map((sources: IArticle, index) => (
-            <Article key={sources.source.id} sources={sources} index={index} />
+            <Article key={index} sources={sources} index={index} />
           ))}
         </ul>
       ) : (

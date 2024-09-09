@@ -19,7 +19,7 @@ const NewsLink: React.FC<{ sources: ISources | IArticle }> = ({
         rel="noopener noreferrer"
         className={styles['article-link']}
       >
-        <p className={styles['description']}>{sources.description}</p>
+        <p className={styles['description']}>{sources.title}</p>
         <div className={styles['name-date']}>
           <p className={styles['name']}>{sources.source.name}</p>
           <p className={styles['date']}>{formattedDate(sources.publishedAt)}</p>
