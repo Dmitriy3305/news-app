@@ -2,6 +2,11 @@
   font-style: italic;
 }
 
+.name-date {
+  display: flex;
+  justify-content: space-between;
+}
+
 .name {
   font-weight: bold;
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './newsLink.module.css';
 import ISources from '../../interfaces/ISources';
 import IArticle from '../../interfaces/IArticle';
+import { formattedDate } from '../../utils/formattedDate';
 
 const isArticle = (source: ISources | IArticle): source is IArticle => {
   return (source as IArticle).title !== undefined;
@@ -19,7 +20,10 @@ const NewsLink: React.FC<{ sources: ISources | IArticle }> = ({
         className={styles['article-link']}
       >
         <p className={styles['description']}>{sources.description}</p>
-        <p className={styles['name']}>{sources.source.name}</p>
+        <div className={styles['name-date']}>
+          <p className={styles['name']}>{sources.source.name}</p>
+          <p className={styles['date']}>{formattedDate(sources.publishedAt)}</p>
+        </div>
       </a>
     );
   } else {
