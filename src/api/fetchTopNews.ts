@@ -1,15 +1,16 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { getTopHeadlines } from './getTopHeadlines';
 import { getNewsOfCountry } from './getNewsOfCountry';
-import { AppDispatch } from '../store/store';
-import { setCountries } from '../store/slices/countriesSlice';
-import { getFullCountryNames } from '../utils/getFullCountryNames';
 import { getNewsOfLanguage } from './getNewsOfLanguage';
-import { setLanguages } from '../store/slices/languagesSlice';
-import { getFullLanguageNames } from '../utils/getFullLanguageNames';
 import { getNewsOfCategory } from './getNewsOfCategory';
-import { setCategories } from '../store/slices/categoriesSlice';
-import { getCategories } from '../utils/getCategories';
+import { AppDispatch } from '@/store/store';
+import { setCountries } from '@/store/slices/countriesSlice';
+import { getFullNames } from '@/utils/getFullNames';
+import { countryMap } from '@/const/countryMap';
+import { setLanguages } from '@/store/slices/languagesSlice';
+import { languageMap } from '@/const/languageMap';
+import { setCategories } from '@/store/slices/categoriesSlice';
+import { getCategories } from '@/utils/getCategories';
 
 export const fetchTopNews = createAsyncThunk(
   'news/fetchNews',
@@ -38,8 +39,12 @@ export const fetchTopNews = createAsyncThunk(
     } else {
       const data = await getTopHeadlines();
       if (dispatch) {
-        dispatch(setCountries(getFullCountryNames(data.sources)));
-        dispatch(setLanguages(getFullLanguageNames(data.sources)));
+        dispatch(
+          setCountries(getFullNames(data.sources, countryMap, 'country'))
+        );
+        dispatch(
+          setLanguages(getFullNames(data.sources, languageMap, 'language'))
+        );
         dispatch(setCategories(getCategories(data.sources)));
       }
       return data.sources;

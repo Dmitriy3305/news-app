@@ -4,7 +4,7 @@ import { Navigation } from 'swiper/modules';
 import SwiperSlideItem from '../swiperSlideItem/SwiperSlideItem';
 import 'swiper/css/bundle';
 import styles from './swiperComponent.module.css';
-import { ISwiperComponentProps } from '../../../interfaces/ISwiperComponentProps';
+import { ISwiperComponentProps } from '@/interfaces/ISwiperComponentProps';
 
 const SwiperComponent: React.FC<ISwiperComponentProps> = ({
   items,

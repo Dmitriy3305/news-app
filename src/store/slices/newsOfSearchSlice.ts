@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../store';
-import { INewsOfSearchState } from '../../interfaces/INewsOfSearchState';
-import { fetchNewsFromSearh } from '../../api/fetchNewsFromSearch';
+import { INewsOfSearchState } from '@/interfaces/INewsOfSearchState';
+import { fetchNewsFromSearh } from '@/api/fetchNewsFromSearch';
 
 const initialState: INewsOfSearchState = {
   articles: [],

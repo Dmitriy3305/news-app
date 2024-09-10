@@ -1,29 +1,29 @@
+import { useAppSelector } from '@/store/store';
 import styles from './newsOfSearch.module.css';
-import { useAppSelector } from '../../store/store';
+import { selectError, selectLoading } from '@/store/slices/topNewsSlice';
 import {
-  selectError,
-  selectLoading,
+  selectArticless,
   selectCurrentPageNewsOfSearch,
-} from '../../store/slices/newsOfSearchSlice';
-import Article from '../Article/Article';
-import Title from '../Title/Title';
-import { selectArticless } from '../../store/slices/newsOfSearchSlice';
-import IArticle from '../../interfaces/IArticle';
+} from '@/store/slices/newsOfSearchSlice';
+import { getCurrentArticles } from '@/utils/getCurrentArticles';
+import IArticle from '@/interfaces/IArticle';
 import Loader from '../Loader/Loader';
+import Title from '../Title/Title';
+import { ITEMS_PER_PAGE } from '@/const/itemsPerPage';
+import Article from '../Article/Article';
 
 const NewsOfSearch: React.FC = (): JSX.Element => {
   const loading = useAppSelector(selectLoading);
   const error = useAppSelector(selectError);
   const newsOfSearch = useAppSelector(selectArticless) as IArticle[];
   const currentPage = useAppSelector(selectCurrentPageNewsOfSearch);
-  const ITEMS_PER_PAGE = 5;
+  const currentArticles = getCurrentArticles(
+    currentPage,
+    newsOfSearch
+  ) as IArticle[];
 
   if (loading) return <Loader />;
   if (error) return <div>Error: {error}</div>;
-
-  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-  const endIndex = startIndex + ITEMS_PER_PAGE;
-  const currentArticles = newsOfSearch.slice(startIndex, endIndex);
 
   return (
     <section className={styles['top-headlines']}>

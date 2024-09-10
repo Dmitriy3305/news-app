@@ -1,3 +1,3 @@
-export interface PopupProps {
+export interface IPopupProps {
   handleInfoClick: () => void;
 }

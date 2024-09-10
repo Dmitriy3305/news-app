@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './article.module.css';
-import ISources from '../../interfaces/ISources';
+import ISources from '@/interfaces/ISources';
+import IArticle from '@/interfaces/IArticle';
 import NewsLink from '../NewsLink/NewsLink';
-import IArticle from '../../interfaces/IArticle';
 
 const Article: React.FC<{ sources: ISources | IArticle; index: number }> = ({
   sources,

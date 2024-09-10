@@ -1,11 +1,12 @@
 import { fetchTopNews } from '../api/fetchTopNews';
+import { countryMap } from '../const/countryMap';
+import { languageMap } from '../const/languageMap';
 import { setActiveMenu } from '../store/slices/activeMenuSlice';
-import { setCurrentPageTopNews } from '../store/slices/topNewsSlice';
 import { setSelectedItem } from '../store/slices/selectedtemSlice';
+import { setCurrentPageTopNews } from '../store/slices/topNewsSlice';
 import { AppDispatch } from '../store/store';
 import { MenuType } from '../types/menuType';
-import { getShotCountryNames } from './getShotCountryNames';
-import { getShotLanguageNames } from './getShotLanguageNames';
+import { getShotNames } from './getShotNames';
 
 export const handleClickOnNav = (
   dispatch: AppDispatch,
@@ -16,12 +17,12 @@ export const handleClickOnNav = (
   switch (activeMenu) {
     case 'COUNTRIES':
       dispatch(setActiveMenu('country'));
-      dispatch(setSelectedItem(getShotCountryNames(item)));
+      dispatch(setSelectedItem(getShotNames(item, countryMap)));
       dispatch(
         fetchTopNews({
           dispatch: null,
           activeMenu: 'country',
-          item: getShotCountryNames(item),
+          item: getShotNames(item, countryMap),
         })
       );
       break;
@@ -38,12 +39,12 @@ export const handleClickOnNav = (
       break;
     case 'LANGUAGES':
       dispatch(setActiveMenu('language'));
-      dispatch(setSelectedItem(getShotLanguageNames(item)));
+      dispatch(setSelectedItem(getShotNames(item, languageMap)));
       dispatch(
         fetchTopNews({
           dispatch: null,
           activeMenu: 'language',
-          item: getShotLanguageNames(item),
+          item: getShotNames(item, languageMap),
         })
       );
       break;

@@ -1,6 +1,6 @@
-import { sortArticles } from '../../store/slices/newsOfSearchSlice';
-import { useAppDispatch, useAppSelector } from '../../store/store';
+import { useAppDispatch, useAppSelector } from '@/store/store';
 import styles from './sortIcon.module.css';
+import { sortArticles } from '@/store/slices/newsOfSearchSlice';
 
 const SortIcon: React.FC = () => {
   const dispatch = useAppDispatch();

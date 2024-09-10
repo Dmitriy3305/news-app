@@ -1,4 +1,4 @@
-import { InfoIconProps } from '../../interfaces/IInfoIconProps';
+import { InfoIconProps } from '@/interfaces/IInfoIconProps';
 import styles from './infoIcon.module.css';
 import { FaInfo } from 'react-icons/fa';
 

@@ -1,7 +1,7 @@
-import { PopupProps } from '../../interfaces/IpopupProps';
+import { IPopupProps } from '@/interfaces/IPopupProps';
 import styles from './popup.module.css';
 
-const Popup: React.FC<PopupProps> = ({ handleInfoClick }) => {
+const Popup: React.FC<IPopupProps> = ({ handleInfoClick }) => {
   return (
     <ul className={styles['popup']}>
       <li>Advanced search:</li>

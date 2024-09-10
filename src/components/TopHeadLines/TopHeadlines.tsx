@@ -1,17 +1,19 @@
-import ISources from '../../interfaces/ISources';
+import { useAppDispatch, useAppSelector } from '@/store/store';
 import styles from './topHeadlines.module.css';
-import { useAppDispatch, useAppSelector } from '../../store/store';
 import {
+  selectCurrentPageTopNews,
   selectError,
   selectHeadlines,
   selectLoading,
-  selectCurrentPageTopNews,
-} from '../../store/slices/topNewsSlice';
+} from '@/store/slices/topNewsSlice';
+import { getCurrentArticles } from '@/utils/getCurrentArticles';
+import ISources from '@/interfaces/ISources';
 import { useEffect } from 'react';
-import { fetchTopNews } from '../../api/fetchTopNews';
-import Article from '../Article/Article';
-import Title from '../Title/Title';
+import { fetchTopNews } from '@/api/fetchTopNews';
 import Loader from '../Loader/Loader';
+import Title from '../Title/Title';
+import { ITEMS_PER_PAGE } from '@/const/itemsPerPage';
+import Article from '../Article/Article';
 
 const TopHeadlines: React.FC = (): JSX.Element => {
   const dispatch = useAppDispatch();
@@ -19,7 +21,10 @@ const TopHeadlines: React.FC = (): JSX.Element => {
   const error = useAppSelector(selectError);
   const topHeadlines = useAppSelector(selectHeadlines);
   const currentPage = useAppSelector(selectCurrentPageTopNews);
-  const ITEMS_PER_PAGE = 5;
+  const currentArticles = getCurrentArticles(
+    currentPage,
+    topHeadlines
+  ) as ISources[];
 
   useEffect(() => {
     dispatch(
@@ -29,10 +34,6 @@ const TopHeadlines: React.FC = (): JSX.Element => {
 
   if (loading) return <Loader />;
   if (error) return <div>Error: {error}</div>;
-
-  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-  const endIndex = startIndex + ITEMS_PER_PAGE;
-  const currentArticles = topHeadlines.slice(startIndex, endIndex);
 
   return (
     <section className={styles['top-headlines']}>

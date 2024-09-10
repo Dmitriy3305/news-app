@@ -1,10 +1,10 @@
-import { PaginationProps } from '../../interfaces/IPaginationProps';
-import { selectCurrentPageTopNews } from '../../store/slices/topNewsSlice';
-import { selectCurrentPageNewsOfSearch } from '../../store/slices/newsOfSearchSlice';
-import { useAppSelector } from '../../store/store';
+import { PaginationProps } from '@/interfaces/IPaginationProps';
 import styles from './pagination.module.css';
 import { GoArrowRight } from 'react-icons/go';
 import { GoArrowLeft } from 'react-icons/go';
+import { useAppSelector } from '@/store/store';
+import { selectCurrentPageTopNews } from '@/store/slices/topNewsSlice';
+import { selectCurrentPageNewsOfSearch } from '@/store/slices/newsOfSearchSlice';
 
 const Pagination: React.FC<PaginationProps> = ({
   title,

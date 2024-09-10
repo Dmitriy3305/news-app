@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../store';
-import { ITopNewsState } from '../../interfaces/ITopNewsState';
-import { fetchTopNews } from '../../api/fetchTopNews';
+import { ITopNewsState } from '@/interfaces/ITopNewsState';
+import { fetchTopNews } from '@/api/fetchTopNews';
 
 const initialState: ITopNewsState = {
   headlines: [],

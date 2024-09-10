@@ -1,12 +1,9 @@
 import React from 'react';
 import styles from './newsLink.module.css';
-import ISources from '../../interfaces/ISources';
-import IArticle from '../../interfaces/IArticle';
-import { formattedDate } from '../../utils/formattedDate';
-
-const isArticle = (source: ISources | IArticle): source is IArticle => {
-  return (source as IArticle).title !== undefined;
-};
+import ISources from '@/interfaces/ISources';
+import IArticle from '@/interfaces/IArticle';
+import { isArticle } from '@/utils/isArticle';
+import { formattedDate } from '@/utils/formattedDate';
 
 const NewsLink: React.FC<{ sources: ISources | IArticle }> = ({
   sources,

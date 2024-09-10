@@ -1,7 +1,7 @@
+import { MenuType } from '@/types/menuType';
 import React, { useState } from 'react';
-import NavTop from './NavTop/NavTop';
-import NavBottom from './NavBottom/NavBottom';
-import { MenuType } from '../../types/menuType';
+import NavTop from '../NavTop/NavTop';
+import NavBottom from '../NavBottom/NavBottom';
 
 const Nav: React.FC = (): JSX.Element => {
   const [activeMenu, setActiveMenu] = useState<MenuType>('COUNTRIES');

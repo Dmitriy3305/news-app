@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './swiperSlideItem.module.css';
-import { ISwiperSlideItemProps } from '../../../interfaces/ISwiperSlideItemProps';
+import { ISwiperSlideItemProps } from '@/interfaces/ISwiperSlideItemProps';
 
 const SwiperSlideItem: React.FC<ISwiperSlideItemProps> = ({
   item,

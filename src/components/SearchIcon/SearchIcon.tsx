@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './searchIcon.module.css';
-import { selectInputValue } from '../../store/slices/inputValue';
-import { useAppDispatch, useAppSelector } from '../../store/store';
-import { fetchNewsFromSearh } from '../../api/fetchNewsFromSearch';
+import { useAppDispatch, useAppSelector } from '@/store/store';
+import { selectInputValue } from '@/store/slices/inputValue';
+import { fetchNewsFromSearh } from '@/api/fetchNewsFromSearch';
 
 const SearchIcon: React.FC = (): JSX.Element => {
   const dispatch = useAppDispatch();

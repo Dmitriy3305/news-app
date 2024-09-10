@@ -1,5 +1,5 @@
+import { AppDispatch } from '@/store/store';
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { AppDispatch } from '../store/store';
 import { getNewsFromSearch } from './getNewsFromSearch';
 
 export const fetchNewsFromSearh = createAsyncThunk(

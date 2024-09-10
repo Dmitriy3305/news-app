@@ -1,13 +1,13 @@
 import React from 'react';
 import styles from './navBottom.module.css';
-import { INavBottomProps } from '../../../interfaces/INavBottomProps';
-import { MenuType } from '../../../types/menuType';
-import { useAppDispatch, useAppSelector } from '../../../store/store';
-import { handleClickOnNav } from '../../../utils/handleClickOnNav';
-import { selectCountries } from '../../../store/slices/countriesSlice';
-import { selectLanguages } from '../../../store/slices/languagesSlice';
-import { selectCategories } from '../../../store/slices/categoriesSlice';
-import SwiperComponent from '../../Swiper/swiperComponent/swiperComponent';
+import { INavBottomProps } from '@/interfaces/INavBottomProps';
+import { MenuType } from '@/types/menuType';
+import { useAppDispatch, useAppSelector } from '@/store/store';
+import { selectCountries } from '@/store/slices/countriesSlice';
+import { selectLanguages } from '@/store/slices/languagesSlice';
+import { selectCategories } from '@/store/slices/categoriesSlice';
+import SwiperComponent from '../Swiper/swiperComponent/swiperComponent';
+import { handleClickOnNav } from '@/utils/handleClickOnNav';
 
 const NavBottom: React.FC<INavBottomProps> = ({ activeMenu }): JSX.Element => {
   const dispatch = useAppDispatch();

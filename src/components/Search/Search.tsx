@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import styles from './search.module.css';
-import { useAppDispatch, useAppSelector } from '../../store/store';
-import { selectInputValue, setInputValue } from '../../store/slices/inputValue';
+import { useAppDispatch, useAppSelector } from '@/store/store';
+import { selectInputValue, setInputValue } from '@/store/slices/inputValue';
 import InfoIcon from '../InfoIcon/InfoIcon';
-import Popup from '../Popup/Popup';
 import SearchIcon from '../SearchIcon/SearchIcon';
+import Popup from '../Popup/Popup';
 
 const Search: React.FC = (): JSX.Element => {
   const dispatch = useAppDispatch();

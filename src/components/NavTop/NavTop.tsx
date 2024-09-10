@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from './navTop.module.css';
-import Search from '../../Search/Search';
-import { INavTopProps } from '../../../interfaces/INavTopProps';
-import { navTopItems } from '../../../const/navTopItems';
-import { MenuType } from '../../../types/menuType';
+import { INavTopProps } from '@/interfaces/INavTopProps';
+import { MenuType } from '@/types/menuType';
+import Search from '../Search/Search';
+import { navTopItems } from '@/const/navTopItems';
 
 const NavTop: React.FC<INavTopProps & { activeMenu: MenuType }> = ({
   onMenuHover,
