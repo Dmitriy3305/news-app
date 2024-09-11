@@ -3,6 +3,12 @@
   cursor: pointer;
 }
 
-.sort-text {
-  color: white;
+.sort-up-down,
+.sort-down-up {
+  transition: transform 0.5s ease;
+  fill: white;
+}
+
+.sort-down-up {
+  transform: rotate(180deg);
 }

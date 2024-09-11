@@ -1,6 +1,7 @@
 import { useAppDispatch, useAppSelector } from '@/store/store';
 import styles from './sortIcon.module.css';
 import { sortArticles } from '@/store/slices/newsOfSearchSlice';
+import { BiSortAlt2 } from 'react-icons/bi';
 
 const SortIcon: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -22,11 +23,11 @@ const SortIcon: React.FC = () => {
       className={`${styles['sort-icon']} ${articlesLength > 0 ? '' : styles['disabled']}`}
       onClick={handleSortClick}
     >
-      <div className={styles['sort-text']}>Sort:</div>
+      <div className={styles['sort']}></div>
       {isAscendingSort ? (
-        <div className={styles['sort-text']}> new ones first </div>
+        <BiSortAlt2 className={styles['sort-up-down']} />
       ) : (
-        <div className={styles['sort-text']}> old ones first </div>
+        <BiSortAlt2 className={styles['sort-down-up']} />
       )}
     </div>
   );

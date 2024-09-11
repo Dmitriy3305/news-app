@@ -21,7 +21,7 @@ const NavBottom: React.FC<INavBottomProps> = ({ activeMenu }): JSX.Element => {
   };
 
   return (
-    <nav className={styles['nav']}>
+    <nav className={styles['nav-bottom']}>
       {activeMenu && (
         <SwiperComponent
           items={menuItems[activeMenu] || []}

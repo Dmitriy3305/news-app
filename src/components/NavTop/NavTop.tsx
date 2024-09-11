@@ -10,7 +10,7 @@ const NavTop: React.FC<INavTopProps & { activeMenu: MenuType }> = ({
   activeMenu,
 }): JSX.Element => {
   return (
-    <nav className={styles['nav']}>
+    <nav className={styles['nav-top']}>
       <ul className={styles['menu']}>
         {navTopItems.map((item, index) => (
           <li
