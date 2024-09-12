@@ -21,7 +21,6 @@
   animation: slideOut 0.5s forwards;
 }
 
-
 @keyframes slideOut {
   from {
     transform: translateX(0);
@@ -30,5 +29,11 @@
   to {
     transform: translateX(-25%);
     opacity: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .top-headlines {
+    width: 90%;
   }
 }

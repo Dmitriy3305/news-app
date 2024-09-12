@@ -25,3 +25,9 @@
 .active {
   color: #ff6347;
 }
+
+@media (max-width: 768px) {
+  .menu {
+    flex-direction: column;
+  }
+}

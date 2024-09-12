@@ -1,13 +1,13 @@
 import React from 'react';
 import styles from './news.module.css';
 import TopHeadlines from '../TopHeadLines/TopHeadlines';
-import NewsOfSearch from '../NewsOfSearch/NewsOfSearch';
+import NewsFromSearch from '../NewsFromSearch/NewsOfSearch';
 
 const News: React.FC = (): JSX.Element => {
   return (
     <div className={styles['news-container']}>
       <TopHeadlines />
-      <NewsOfSearch />
+      <NewsFromSearch />
     </div>
   );
 };

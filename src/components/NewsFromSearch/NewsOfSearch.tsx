@@ -1,5 +1,5 @@
 import { useAppSelector } from '@/store/store';
-import styles from './newsOfSearch.module.css';
+import styles from './newsFromSearch.module.css';
 import { selectError, selectLoading } from '@/store/slices/topNewsSlice';
 import {
   selectArticless,
@@ -12,7 +12,7 @@ import Title from '../Title/Title';
 import { ITEMS_PER_PAGE } from '@/const/itemsPerPage';
 import Article from '../Article/Article';
 
-const NewsOfSearch: React.FC = (): JSX.Element => {
+const NewsFromSearch: React.FC = (): JSX.Element => {
   const loading = useAppSelector(selectLoading);
   const error = useAppSelector(selectError);
   const newsOfSearch = useAppSelector(selectArticless) as IArticle[];
@@ -26,7 +26,7 @@ const NewsOfSearch: React.FC = (): JSX.Element => {
   if (error) return <div>Error: {error}</div>;
 
   return (
-    <section className={styles['top-headlines']}>
+    <section className={styles['news-from-search']}>
       <Title
         title={'NEWS FROM SEARCH'}
         totalItems={newsOfSearch.length}
@@ -45,4 +45,4 @@ const NewsOfSearch: React.FC = (): JSX.Element => {
   );
 };
 
-export default NewsOfSearch;
+export default NewsFromSearch;

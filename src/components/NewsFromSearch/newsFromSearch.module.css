@@ -7,7 +7,7 @@
   color: black;
 }
 
-.top-headlines {
+.news-from-search {
   padding: 1vw;
   font-family: merriweather;
   width: 45%;
@@ -31,3 +31,9 @@
     opacity: 1;
   }
 }
+
+@media (max-width: 768px) {
+  .news-from-search {
+   width: 90%;
+  }
+ }
