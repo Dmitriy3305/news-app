@@ -12,6 +12,10 @@ const Pagination: React.FC<PaginationProps> = ({
   totalItems,
   itemsPerPage,
 }) => {
+  if (totalItems === 0) {
+    totalItems = 1;
+  }
+
   const totalPages = Math.ceil(totalItems / itemsPerPage);
   const currentPageTopNews = useAppSelector(selectCurrentPageTopNews);
   const currentPageNewsOfSearch = useAppSelector(selectCurrentPageNewsOfSearch);
