@@ -1,0 +1,27 @@
+.pagination {
+  text-transform: lowercase;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pages {
+  color: white;
+}
+
+.btn {
+  background-color: transparent;
+  border: none;
+  color: white;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.arrow {
+  fill: white;
+  font-weight: bold;
+  font-family: merriweather;
+}

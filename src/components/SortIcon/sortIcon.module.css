@@ -1,0 +1,14 @@
+.sort-icon {
+  display: flex;
+  cursor: pointer;
+}
+
+.sort-up-down,
+.sort-down-up {
+  transition: transform 0.5s ease;
+  fill: white;
+}
+
+.sort-down-up {
+  transform: rotate(180deg);
+}

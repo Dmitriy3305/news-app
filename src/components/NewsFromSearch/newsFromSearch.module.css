@@ -1,0 +1,39 @@
+* {
+  list-style: none;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  color: black;
+}
+
+.news-from-search {
+  padding: 1vw;
+  font-family: merriweather;
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  font-size: 1em;
+  color: black;
+}
+
+.slide-out {
+  animation: slideOut 0.5s forwards;
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(25%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .news-from-search {
+   width: 90%;
+  }
+ }

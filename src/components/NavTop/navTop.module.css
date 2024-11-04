@@ -1,0 +1,33 @@
+.nav-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-size: 1rem;
+  padding: 1vw;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: merriweather;
+  width: 40%;
+  font-size: 1rem;
+  padding: 0.5vw;
+}
+
+.item {
+  color: rgb(26, 115, 232);
+  font-weight: bold;
+}
+
+.active {
+  color: #ff6347;
+}
+
+@media (max-width: 768px) {
+  .menu {
+    flex-direction: column;
+  }
+}

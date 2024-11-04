@@ -1,0 +1,20 @@
+.item {
+  color: rgb(26, 115, 232);
+  font-weight: bold;
+  text-align: center;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(26, 115, 232);
+  font-weight: bold;
+}
+
+.item:hover {
+  color: #ff6347;
+  opacity: 0.99;
+  transition: 0.5s;
+  cursor: pointer;
+}

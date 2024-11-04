@@ -1,0 +1,16 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1vw;
+  background-color: #f8f9fa;
+}
+
+.nav {
+  flex-grow: 1;
+}
+
+.contacts {
+  display: flex;
+  gap: 1vw;
+}

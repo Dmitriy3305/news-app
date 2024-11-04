@@ -1,0 +1,12 @@
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.news {
+  color: #ff6347;
+}
+
+.app {
+  color: #007bff;
+}

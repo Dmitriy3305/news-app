@@ -1,0 +1,17 @@
+.nav-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-size: 1rem;
+  padding: 1vw;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  font-family: merriweather;
+  width: 100%;
+  font-size: 1rem;
+  padding: 0.5vw;
+}
